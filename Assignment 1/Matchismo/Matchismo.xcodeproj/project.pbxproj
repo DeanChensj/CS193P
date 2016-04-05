@@ -13,6 +13,8 @@
 		055DB7601CAEB804007659D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055DB75E1CAEB804007659D9 /* Main.storyboard */; };
 		055DB7621CAEB804007659D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055DB7611CAEB804007659D9 /* Assets.xcassets */; };
 		055DB7651CAEB804007659D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055DB7631CAEB804007659D9 /* LaunchScreen.storyboard */; };
+		055DB7721CAF56F4007659D9 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB7711CAF56F4007659D9 /* Card.m */; };
+		055DB7751CB2C4A1007659D9 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB7741CB2C4A1007659D9 /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		055DB7611CAEB804007659D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		055DB7641CAEB804007659D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		055DB7661CAEB804007659D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055DB7701CAF56F4007659D9 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		055DB7711CAF56F4007659D9 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		055DB7731CB2C4A1007659D9 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		055DB7741CB2C4A1007659D9 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		055DB7541CAEB804007659D9 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				055DB76C1CAF55FA007659D9 /* model */,
 				055DB75B1CAEB804007659D9 /* ViewController.h */,
 				055DB75C1CAEB804007659D9 /* ViewController.m */,
 				055DB75E1CAEB804007659D9 /* Main.storyboard */,
@@ -77,6 +84,17 @@
 				055DB7561CAEB804007659D9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		055DB76C1CAF55FA007659D9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				055DB7701CAF56F4007659D9 /* Card.h */,
+				055DB7711CAF56F4007659D9 /* Card.m */,
+				055DB7731CB2C4A1007659D9 /* Deck.h */,
+				055DB7741CB2C4A1007659D9 /* Deck.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055DB7751CB2C4A1007659D9 /* Deck.m in Sources */,
 				055DB75D1CAEB804007659D9 /* ViewController.m in Sources */,
 				055DB75A1CAEB804007659D9 /* AppDelegate.m in Sources */,
 				055DB7571CAEB804007659D9 /* main.m in Sources */,
+				055DB7721CAF56F4007659D9 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
