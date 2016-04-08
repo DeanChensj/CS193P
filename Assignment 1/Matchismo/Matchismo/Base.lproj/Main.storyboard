@@ -32,7 +32,7 @@
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
                                 </variation>
                                 <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNN-r4-NuP"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JL4-67-p3u"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3U-n8-k4w">
@@ -59,7 +59,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="flipsLabel" destination="l3U-n8-k4w" id="gVY-lO-h7O"/>
+                        <outlet property="flipsLabel" destination="l3U-n8-k4w" id="eaK-HL-dBw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
