@@ -14,7 +14,6 @@
 @interface ViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UISwitch *is2CardMatch;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *mySegmentControl;
@@ -40,7 +39,7 @@
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
-    [self.is2CardMatch setEnabled:NO];
+    [self.mySegmentControl setEnabled:NO];
 }
 
 - (void)updateUI
@@ -70,7 +69,6 @@
 }
 
 
-
 - (IBAction)restartButton:(UIButton *)sender {
     _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                               usingDeck: [self createDeck]];
@@ -84,32 +82,19 @@
         cardButton.enabled = YES;
     }
     self.scoreLabel.text = @"Score:0";
-    [self.is2CardMatch setEnabled:YES];
-}
-
-- (IBAction)is2CardMatchMode:(UISwitch *)sender {
-    self.game.is2CardMatch = _is2CardMatch.isOn;
-}
-
-- (void) initSegment
-{
-    NSArray *items = [[NSArray alloc] initWithObjects:@"2-Match", @"3-Match", nil];
-    _mySegmentControl = [[UISegmentedControl alloc] initWithItems:items];
-    
+    self.resultLabel.text = @"";
+    [self.mySegmentControl setEnabled:YES];
+    self.game.is2CardMatch = _mySegmentControl.selectedSegmentIndex ? NO : YES;
 }
 
 - (IBAction)segmentControler:(UISegmentedControl *)sender {
-    
-    
+    self.game.is2CardMatch = _mySegmentControl.selectedSegmentIndex ? NO : YES;    
 }
-
-
-
 
 - (void) viewDidLoad
 {
-    [self.is2CardMatch setOn:YES];
-    self.game.is2CardMatch = _is2CardMatch.isOn;
+    [_mySegmentControl setSelectedSegmentIndex:0];
+    self.game.is2CardMatch = YES;
 }
 
 
