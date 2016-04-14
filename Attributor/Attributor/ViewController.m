@@ -7,15 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "TextStatusViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *headline;
 @property (weak, nonatomic) IBOutlet UITextView *body;
 @property (weak, nonatomic) IBOutlet UIButton *outlineButton;
 
 @end
 
 @implementation ViewController
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show Status"]) {
+        if ([segue.destinationViewController isKindOfClass:[TextStatusViewController class]]) {
+            TextStatusViewController *tsvc = (TextStatusViewController *)segue.destinationViewController;
+            tsvc.textToAnalyze = self.body.textStorage;
+        }
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +61,6 @@
 - (void)usePreferredFonts
 {
     self.body.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-    self.headline.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
 }
 
 - (IBAction)changeBodySelectionColorToMatchBackgroundOfButton:(UIButton *)sender {

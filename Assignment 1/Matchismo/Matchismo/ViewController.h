@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface ViewController : UIViewController
 
+// protected, must be implemented in subClass
+- (Deck *)createDeck;
 
 @end
 
