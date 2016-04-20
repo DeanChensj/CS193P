@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 #import "Card.h"
-
+#import "GameResult.h"
 
 @interface CardMatchingGame : NSObject
 
@@ -21,9 +21,12 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
+- (GameResult *)getCurrentGameResult;
+
+- (NSArray *)getAllGameResult;
+
 @property (nonatomic, readonly) NSInteger score;
 
 @property BOOL is2CardMatch;
 
-@property (nonatomic, readonly) NSString *tag;
 @end

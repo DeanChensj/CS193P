@@ -66,7 +66,6 @@
 - (IBAction)changeBodySelectionColorToMatchBackgroundOfButton:(UIButton *)sender {
     [self.body.textStorage addAttribute:NSForegroundColorAttributeName
                                   value:sender.backgroundColor range:self.body.selectedRange];
-    
 }
 
 

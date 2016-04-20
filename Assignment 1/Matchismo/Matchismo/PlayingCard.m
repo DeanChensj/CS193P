@@ -11,7 +11,7 @@
 @implementation PlayingCard
 - (NSString *) contents {
     NSArray *rankStrings = [PlayingCard rankStrings];
-    return [rankStrings[self.rank] stringByAppendingString:self.suit];
+    return [self.suit stringByAppendingString:rankStrings[self.rank]];
 }
 
 static const int maxSuit = 4;
@@ -45,7 +45,7 @@ static const int maxRank = 13;
 @synthesize suit = _suit; // because we provide setter AND getter
 
 + (NSArray *) validSuits {
-    return @[@"♥︎", @"♣︎", @"♠︎", @"♦︎"];
+    return @[@"♠", @"♥", @"♣", @"♦"];
 }
 
 + (NSArray *) rankStrings {

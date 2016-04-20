@@ -13,9 +13,8 @@
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; // of Cards
 @property (nonatomic) NSInteger chosenCnt;
-@property (nonatomic, readwrite) NSString *tag;
+@property (nonatomic, strong) NSMutableArray *myGameResult; // of GameResult
 @end
-
 
 @implementation CardMatchingGame
 
@@ -40,6 +39,7 @@
             }
         }
         self.chosenCnt = 0;
+        self.myGameResult = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -56,34 +56,49 @@ static const int COST_TO_CHOOSE = 1;
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
-    _tag = @"";
+    GameResult *currentResult = nil;
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
+            self.chosenCnt--;
         } else {
             if (_is2CardMatch) {
-                // match against other chosen cards
+                // match against other chosen PlayingCards
+                NSMutableArray * cards = [[NSMutableArray alloc] initWithArray:@[card]];
+                int matchScore = 0;
+                
                 for (Card *otherCard in self.cards) {
                     if (otherCard.isChosen && !otherCard.isMatched) {
-                        int matchScore = [card match:@[otherCard]];
+                        [cards addObject:otherCard];
+                        matchScore = [card match:@[otherCard]];
                         if (matchScore) {
-                            self.score += matchScore * MATCH_BONUS;
+                            matchScore *= MATCH_BONUS;
                             card.matched = YES;
                             otherCard.matched = YES;
-                            _tag = [NSString
-                                    stringWithFormat:@"Matched %@ %@ for %d points", card.contents, otherCard.contents, matchScore * MATCH_BONUS];
+                            
+                            self.chosenCnt = -1;
+                            currentResult = [[GameResult alloc] initWithCards:cards withMatchScore:matchScore * MATCH_BONUS withStatus: (enum Status) CARD_CHANGED];
+                            
                         } else {
-                            self.score -= MISMATCH_PENALTY;
+                            matchScore -= MISMATCH_PENALTY;
                             otherCard.chosen = NO;
-                            _tag = [NSString
-                                    stringWithFormat:@"%@ %@ don't match! %d point penalty!", card.contents, otherCard.contents, MISMATCH_PENALTY];
+                            self.chosenCnt = 0;
+                            
+                            currentResult = [[GameResult alloc] initWithCards:cards withMatchScore:-MISMATCH_PENALTY withStatus: (enum Status) CARD_CHANGED];
+                            
                         }
+                        self.score += matchScore;
+                        currentResult = [[GameResult alloc] initWithCards:cards withMatchScore:matchScore withStatus: (enum Status) CARD_CHANGED];
                         break; // can only choose 2 cards for now
                     }
                 }
-                if ([_tag isEqualToString:@""]) _tag = card.contents;
+                self.chosenCnt++;
+                if (currentResult == nil) {
+                    currentResult = [[GameResult alloc] initWithCards:@[card] withMatchScore:0 withStatus:(enum Status) CHOSEN];
+                }
                 
             } else {
+                
                 if (self.chosenCnt == 2) {
                     NSMutableArray *cards = [[NSMutableArray alloc] init];
                     
@@ -98,32 +113,46 @@ static const int COST_TO_CHOOSE = 1;
                         self.score += matchScore * MATCH_BONUS;
                         card.matched = YES;
                         for (Card *otherCard in cards) otherCard.matched = YES;
+                    
                         self.chosenCnt = -1;
-                        _tag = [NSString
-                                stringWithFormat:@"Matched %@ %@ %@ for %d points", card.contents, ((Card *)cards[0]).contents, ((Card *)cards[1]).contents, matchScore * MATCH_BONUS];
+                        currentResult = [[GameResult alloc] initWithCards:cards withMatchScore:matchScore * MATCH_BONUS withStatus: (enum Status) SET_CHANGED];
+                        
                     } else {
                         self.score -= MISMATCH_PENALTY;
                         for (Card *otherCard in cards) otherCard.chosen = NO;
                         self.chosenCnt = 0;
-                        _tag = [NSString
-                                stringWithFormat:@"%@ %@ %@ don't match! %d point penalty!", card.contents, ((Card *)cards[0]).contents, ((Card *)cards[1]).contents, MISMATCH_PENALTY];
-                    }  
+                        
+                        currentResult = [[GameResult alloc] initWithCards:cards withMatchScore: - MISMATCH_PENALTY withStatus: (enum Status) SET_CHANGED];
+                        
+                    }
+                    
+                    [cards addObject:card];
                 }
                 self.chosenCnt++;
-           
+                
             }
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
-            if ([_tag isEqualToString:@""]) _tag = card.contents;
+            if (currentResult == nil) {
+                currentResult = [[GameResult alloc] initWithCards:@[card] withMatchScore:0 withStatus:(enum Status) CHOSEN];
+            }
         }
-        
     }
+    if (currentResult == nil) {
+        currentResult = [[GameResult alloc] initWithCards:@[card] withMatchScore:0 withStatus:(enum Status) DISMISS];
+    }
+    [_myGameResult addObject:currentResult];
 }
 
+- (GameResult *)getCurrentGameResult
+{
+    return [_myGameResult lastObject];
+}
 
-
-
-
+- (NSArray *)getAllGameResult
+{
+    return _myGameResult;
+}
 
 
 @end

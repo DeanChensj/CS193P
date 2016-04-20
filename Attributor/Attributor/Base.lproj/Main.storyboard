@@ -140,6 +140,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nGd-kb-S77"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yaX-fj-nfk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 outlined characters." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyq-ZI-Cns">

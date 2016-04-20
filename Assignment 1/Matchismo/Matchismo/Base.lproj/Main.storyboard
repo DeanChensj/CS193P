@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fa9-U7-SL4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Playing Card View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="XmL-Mt-XxZ">
+            <objects>
+                <tabBarController id="Fa9-U7-SL4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gqq-Iy-kQT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hqd-af-Ll5" kind="relationship" relationship="viewControllers" id="3Mt-0a-WEA"/>
+                        <segue destination="NBa-tl-wAn" kind="relationship" relationship="viewControllers" id="fKc-tV-ecD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvn-C8-FIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1471.5" y="-221"/>
+        </scene>
+        <!--Playing Card-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PlayingCardViewController" sceneMemberID="viewController">
@@ -16,13 +34,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-S1-vLQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Restart" backgroundImage="cardfront">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="480" width="61" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqs-Ul-sr4"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3U-n8-k4w">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="527" width="280" height="21"/>
+                                    <rect key="frame" x="20" y="484" width="280" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-QW-lit">
@@ -35,7 +67,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="8" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -54,7 +86,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="60" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -73,7 +105,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="112" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -92,7 +124,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="164" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -111,7 +143,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="217" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="217" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -130,7 +162,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="269" y="65" width="44" height="63"/>
+                                    <rect key="frame" x="269" y="77" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -149,7 +181,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="8" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -168,7 +200,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="60" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -187,7 +219,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="112" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -206,7 +238,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="164" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -225,7 +257,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="217" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="217" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -244,25 +276,13 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="269" y="142" width="44" height="63"/>
+                                    <rect key="frame" x="269" y="154" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
                                 </variation>
                                 <connections>
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FSI-RX-bL8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-S1-vLQ">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="239" y="518" width="61" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqs-Ul-sr4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHl-L4-TM3">
@@ -275,7 +295,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="8" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -294,7 +314,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="60" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -313,7 +333,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="112" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -332,7 +352,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="164" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -351,7 +371,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="217" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="217" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -370,7 +390,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="269" y="218" width="44" height="63"/>
+                                    <rect key="frame" x="269" y="230" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -389,7 +409,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="8" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -408,7 +428,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="60" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -427,7 +447,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="112" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -446,7 +466,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="164" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -465,7 +485,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="217" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="217" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -484,7 +504,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="269" y="294" width="44" height="63"/>
+                                    <rect key="frame" x="269" y="306" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -503,7 +523,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="8" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -522,7 +542,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="60" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -541,7 +561,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="112" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -560,7 +580,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="164" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -579,7 +599,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="217" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="217" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -598,7 +618,7 @@
                                     <rect key="frame" x="228" y="176" width="121" height="171"/>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="269" y="371" width="44" height="63"/>
+                                    <rect key="frame" x="269" y="383" width="44" height="63"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="114" width="121" height="171"/>
@@ -609,32 +629,18 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2w-0F-Vje">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="442" width="298" height="22"/>
+                                    <rect key="frame" x="11" y="454" width="298" height="22"/>
                                 </variation>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-Pq-sGc">
-                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <segments>
-                                    <segment title="2-Match"/>
-                                    <segment title="3-Match"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="94" y="28" width="133" height="29"/>
-                                </variation>
-                                <connections>
-                                    <action selector="segmentControler:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vc6-rv-fsX"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="mU6-S1-vLQ"/>
                                 <exclude reference="l3U-n8-k4w"/>
                                 <exclude reference="G1c-QW-lit"/>
                                 <exclude reference="9Gg-2O-6wf"/>
@@ -648,7 +654,6 @@
                                 <exclude reference="y40-oe-jhb"/>
                                 <exclude reference="uw9-HN-dDn"/>
                                 <exclude reference="0ak-8U-cGg"/>
-                                <exclude reference="mU6-S1-vLQ"/>
                                 <exclude reference="HHl-L4-TM3"/>
                                 <exclude reference="DS4-tr-Bc9"/>
                                 <exclude reference="7c8-c5-Nyz"/>
@@ -668,11 +673,11 @@
                                 <exclude reference="msv-aC-tbS"/>
                                 <exclude reference="Qic-Mi-nSi"/>
                                 <exclude reference="k2w-0F-Vje"/>
-                                <exclude reference="6ib-Pq-sGc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="mU6-S1-vLQ"/>
                                 <include reference="l3U-n8-k4w"/>
                                 <include reference="G1c-QW-lit"/>
                                 <include reference="9Gg-2O-6wf"/>
@@ -686,7 +691,6 @@
                                 <include reference="y40-oe-jhb"/>
                                 <include reference="uw9-HN-dDn"/>
                                 <include reference="0ak-8U-cGg"/>
-                                <include reference="mU6-S1-vLQ"/>
                                 <include reference="HHl-L4-TM3"/>
                                 <include reference="DS4-tr-Bc9"/>
                                 <include reference="7c8-c5-Nyz"/>
@@ -706,13 +710,18 @@
                                 <include reference="msv-aC-tbS"/>
                                 <include reference="Qic-Mi-nSi"/>
                                 <include reference="k2w-0F-Vje"/>
-                                <include reference="6ib-Pq-sGc"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Playing Card" id="HN6-Ne-TeP">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="eIi-Qd-wLI">
+                            <connections>
+                                <segue destination="nOg-VT-irp" kind="show" identifier="showresult" id="XLS-Xw-rMC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="mySegmentControl" destination="6ib-Pq-sGc" id="Jpx-I6-SC6"/>
                         <outlet property="resultLabel" destination="k2w-0F-Vje" id="Fno-fO-JVX"/>
                         <outlet property="scoreLabel" destination="l3U-n8-k4w" id="cUb-Zu-uof"/>
                         <outletCollection property="cardButtons" destination="G1c-QW-lit" id="HJP-ih-8Gs"/>
@@ -751,10 +760,515 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373.5" y="173"/>
+            <point key="canvasLocation" x="-157.5" y="-526"/>
+        </scene>
+        <!--Game History-->
+        <scene sceneID="bBP-cy-3Xo">
+            <objects>
+                <viewController title="Game History" id="nOg-VT-irp" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Afn-pn-Ieo"/>
+                        <viewControllerLayoutGuide type="bottom" id="AQa-mm-jHv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PnA-rt-F8o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Game" translatesAutoresizingMaskIntoConstraints="NO" id="EAr-Z7-eg6">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <rect key="frame" x="20" y="72" width="280" height="439"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EAr-Z7-eg6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EAr-Z7-eg6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="gameResult" destination="EAr-Z7-eg6" id="DcB-be-YjY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0y-Vx-y5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484.5" y="-525"/>
+        </scene>
+        <!--Set-->
+        <scene sceneID="E9t-UH-wr2">
+            <objects>
+                <viewController id="5lT-m3-KaO" customClass="SetCardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nC9-qC-XR6"/>
+                        <viewControllerLayoutGuide type="bottom" id="DGb-dd-iqy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="csH-0W-XiS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH4-xr-Jc4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="518" width="61" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mJ5-Nn-GMg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmd-4T-oNT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="72" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="tYd-7I-wyc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Ue-6pg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Restart" backgroundImage="cardfront">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="480" width="61" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAp-J9-MUK"/>
+                                    <action selector="restartButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="utM-Bz-Ldt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-Fl-5fw">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="484" width="280" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTc-JQ-Sv9">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="488" width="298" height="22"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-ae-8Rw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="72" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="p59-As-L1a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBA-KK-mhp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="72" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="xk6-Ni-PKb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="157-z8-f5Z">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="72" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="aSH-Xa-akZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-xH-G78">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="129" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="TcJ-Qh-3Un"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-wn-r6A">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="129" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="QI1-RO-NGo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-Bz-oNy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="129" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="68m-lH-rDk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXD-m3-Gbt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="129" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="7iZ-5I-laF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRe-lD-ChS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="186" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="AY2-UK-HPs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTg-kK-NXw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="186" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="KS8-Ut-YxN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCm-G4-8zi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="186" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="XWc-tV-cSO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-bg-gQ5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="186" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="ytW-KS-bdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxX-n8-prA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="243" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="UQ9-uS-lvk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFW-ZO-cXH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="243" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="SXq-oF-7Du"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6a-wC-A6l">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="243" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="8xh-iG-eu2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xL-HR-LMZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="243" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="gOI-UM-386"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyD-gI-IVd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="300" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="C8Q-wh-jsQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-Il-5f2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="300" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="CCe-Rv-g1a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOM-Bf-UOQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="300" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="5GA-cw-m7s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-zR-Wmr">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="300" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="TfA-V2-9Yc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DH-A4-lB3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="357" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="Ims-MQ-psf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-Rv-ub5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="89" y="357" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="45o-Ov-tfP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-Ta-MMZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="357" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="WE3-cf-WXq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-be-syE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" backgroundImage="cardfront"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="239" y="357" width="67" height="49"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="5lT-m3-KaO" eventType="touchUpInside" id="bCp-0f-5CL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-dP-Y5y">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="449" width="298" height="23"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OH4-xr-Jc4"/>
+                                <exclude reference="lmd-4T-oNT"/>
+                                <exclude reference="a2R-Ue-6pg"/>
+                                <exclude reference="WeF-Fl-5fw"/>
+                                <exclude reference="iTc-JQ-Sv9"/>
+                                <exclude reference="wSV-ae-8Rw"/>
+                                <exclude reference="zBA-KK-mhp"/>
+                                <exclude reference="157-z8-f5Z"/>
+                                <exclude reference="p9L-xH-G78"/>
+                                <exclude reference="hg2-wn-r6A"/>
+                                <exclude reference="yb9-Bz-oNy"/>
+                                <exclude reference="lXD-m3-Gbt"/>
+                                <exclude reference="ZRe-lD-ChS"/>
+                                <exclude reference="zTg-kK-NXw"/>
+                                <exclude reference="jCm-G4-8zi"/>
+                                <exclude reference="dtm-bg-gQ5"/>
+                                <exclude reference="mxX-n8-prA"/>
+                                <exclude reference="AFW-ZO-cXH"/>
+                                <exclude reference="M6a-wC-A6l"/>
+                                <exclude reference="8xL-HR-LMZ"/>
+                                <exclude reference="fyD-gI-IVd"/>
+                                <exclude reference="UFn-Il-5f2"/>
+                                <exclude reference="sOM-Bf-UOQ"/>
+                                <exclude reference="CxS-zR-Wmr"/>
+                                <exclude reference="4DH-A4-lB3"/>
+                                <exclude reference="mQc-Rv-ub5"/>
+                                <exclude reference="Xfu-Ta-MMZ"/>
+                                <exclude reference="Ld7-be-syE"/>
+                                <exclude reference="QHh-dP-Y5y"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OH4-xr-Jc4"/>
+                                <include reference="lmd-4T-oNT"/>
+                                <include reference="a2R-Ue-6pg"/>
+                                <include reference="WeF-Fl-5fw"/>
+                                <include reference="iTc-JQ-Sv9"/>
+                                <include reference="wSV-ae-8Rw"/>
+                                <include reference="zBA-KK-mhp"/>
+                                <include reference="157-z8-f5Z"/>
+                                <include reference="p9L-xH-G78"/>
+                                <include reference="hg2-wn-r6A"/>
+                                <include reference="yb9-Bz-oNy"/>
+                                <include reference="lXD-m3-Gbt"/>
+                                <include reference="ZRe-lD-ChS"/>
+                                <include reference="zTg-kK-NXw"/>
+                                <include reference="jCm-G4-8zi"/>
+                                <include reference="dtm-bg-gQ5"/>
+                                <include reference="mxX-n8-prA"/>
+                                <include reference="AFW-ZO-cXH"/>
+                                <include reference="M6a-wC-A6l"/>
+                                <include reference="8xL-HR-LMZ"/>
+                                <include reference="fyD-gI-IVd"/>
+                                <include reference="UFn-Il-5f2"/>
+                                <include reference="sOM-Bf-UOQ"/>
+                                <include reference="CxS-zR-Wmr"/>
+                                <include reference="4DH-A4-lB3"/>
+                                <include reference="mQc-Rv-ub5"/>
+                                <include reference="Xfu-Ta-MMZ"/>
+                                <include reference="Ld7-be-syE"/>
+                                <include reference="QHh-dP-Y5y"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set" id="feZ-xk-coa">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="JvQ-pC-rip">
+                            <connections>
+                                <segue destination="nOg-VT-irp" kind="show" identifier="showresult" id="KTi-HB-brC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="QHh-dP-Y5y" id="bGZ-Zl-cKk"/>
+                        <outlet property="scoreLabel" destination="WeF-Fl-5fw" id="ifc-MI-gCL"/>
+                        <outletCollection property="cardButtons" destination="lmd-4T-oNT" id="6AH-sm-8ir"/>
+                        <outletCollection property="cardButtons" destination="lmd-4T-oNT" id="04k-To-7Dy"/>
+                        <outletCollection property="cardButtons" destination="wSV-ae-8Rw" id="Zy7-DJ-R1u"/>
+                        <outletCollection property="cardButtons" destination="zBA-KK-mhp" id="meb-nf-P6Z"/>
+                        <outletCollection property="cardButtons" destination="157-z8-f5Z" id="A2a-NO-NnA"/>
+                        <outletCollection property="cardButtons" destination="p9L-xH-G78" id="uu0-oz-weC"/>
+                        <outletCollection property="cardButtons" destination="hg2-wn-r6A" id="I1P-pk-JYl"/>
+                        <outletCollection property="cardButtons" destination="yb9-Bz-oNy" id="4DH-ZZ-lLn"/>
+                        <outletCollection property="cardButtons" destination="lXD-m3-Gbt" id="t5I-p7-ZCA"/>
+                        <outletCollection property="cardButtons" destination="ZRe-lD-ChS" id="UJb-TR-Kbg"/>
+                        <outletCollection property="cardButtons" destination="zTg-kK-NXw" id="Da0-ta-QpN"/>
+                        <outletCollection property="cardButtons" destination="jCm-G4-8zi" id="xeL-NR-Z52"/>
+                        <outletCollection property="cardButtons" destination="dtm-bg-gQ5" id="x7G-60-Mj5"/>
+                        <outletCollection property="cardButtons" destination="mxX-n8-prA" id="RXy-6T-XZq"/>
+                        <outletCollection property="cardButtons" destination="AFW-ZO-cXH" id="7g1-nD-um2"/>
+                        <outletCollection property="cardButtons" destination="M6a-wC-A6l" id="Uht-JF-px0"/>
+                        <outletCollection property="cardButtons" destination="8xL-HR-LMZ" id="3pm-bf-aKr"/>
+                        <outletCollection property="cardButtons" destination="fyD-gI-IVd" id="sSk-VK-fqW"/>
+                        <outletCollection property="cardButtons" destination="UFn-Il-5f2" id="f9H-jz-dpd"/>
+                        <outletCollection property="cardButtons" destination="sOM-Bf-UOQ" id="Sj1-Hm-XRb"/>
+                        <outletCollection property="cardButtons" destination="CxS-zR-Wmr" id="7hr-26-nhy"/>
+                        <outletCollection property="cardButtons" destination="Ld7-be-syE" id="L9r-ic-CrX"/>
+                        <outletCollection property="cardButtons" destination="Xfu-Ta-MMZ" id="SO8-R5-jQd"/>
+                        <outletCollection property="cardButtons" destination="mQc-Rv-ub5" id="fXd-VR-j0p"/>
+                        <outletCollection property="cardButtons" destination="4DH-A4-lB3" id="HF9-L9-XeG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECV-D1-rng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="155"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hB9-p9-3sE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NBa-tl-wAn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="fNG-5S-21W"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pHg-v6-Ehv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ewv-vq-ipC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCg-dm-hv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790.5" y="-526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sSe-ut-OSI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hqd-af-Ll5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="ImZ-yT-9s6"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NEc-sH-vU0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5lT-m3-KaO" kind="relationship" relationship="rootViewController" id="EEV-hc-bfl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alY-Ml-SDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772.5" y="155"/>
         </scene>
     </scenes>
     <resources>
         <image name="cardback" width="64" height="96"/>
+        <image name="cardfront" width="64" height="96"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XLS-Xw-rMC"/>
+    </inferredMetricsTieBreakers>
 </document>

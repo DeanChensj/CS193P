@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "Deck.h"
+#import "Card.h"
+#import "CardMatchingGame.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    CardMatchingGame *_game;
+}
 
 // protected, must be implemented in subClass
 - (Deck *)createDeck;
+
+- (NSAttributedString *)showCard:(Card *)card;
+
+- (NSAttributedString *)showGameResult:(GameResult *)gameResult;
+
+- (NSAttributedString *)showAllGameResult;
 
 @end
 
